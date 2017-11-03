@@ -1,38 +1,73 @@
 
-
+// ****************************************************************
+//   Student.java
+//
+//   Define a student class that stores name, score on test 1, and
+//   score on test 2.  Methods prompt for and read in grades,
+//   compute the average, and return a string containing student's info.
+// ****************************************************************
+import java.util.Scanner;
 public class Student
-{   
-    // instance variables
+{
+    //declare instance data
     private String name;
-    private int idNumber;
-    private Student bestFriend;
-    /**
-     * Constructor for objects of class Student
-     */
-    public Student()
+    private int test1Score;
+    private int test2Score;
+    
+    //constructor
+    //-----------------------------------------------
+    public Student(String studentName, int ts1, int ts2)
     {
-       
+        //add body of constructor
+        this.name = studentName;
+        this.test1Score = ts1;
+        this.test2Score = ts2;
+    }
+    //-----------------------------------------------
+    //inputGrades: prompt for and read in student's grades for test1 and test2.
+    //Use name in prompts, e.g., "Enter's Joe's score for test1".
+    //-----------------------------------------------
+    public void inputGrades(String studentName, int testNumber)
+    {
+        //add body of inputGrades
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter " + studentName + "'s score for " + testNumber);
+        
+        if(testNumber == 1){
+            this.test1Score = scan.nextInt();
+        }
+        
+        if(testNumber == 2){
+            this.test2Score = scan.nextInt();
+        }
     }
     
-    public Student(int num, String nm){
-        this.idNumber = num;
-        this.name = nm;
+    //-----------------------------------------------
+    //getAverage: compute and return the student's test average
+    //-----------------------------------------------
+    //add header for getAverage
+    public int getAverage(int score1, int score2)
+    {
+        //add body of getAverage
+        return((score1 +score2)/2);
     }
     
-    public int combineIDNumbers(){
-        return this.idNumber + bestFriend.idNumber;
+    //-----------------------------------------------
+    //getName: return the student's name
+    //-----------------------------------------------
+    //add header for getName
+    public String getName()
+    {
+        //add body of getName
+        return this.name;
     }
-    
-    public Student newStudent(Student other){
-        Student temp = new Student(other.idNumber, this.name);
-        return temp;
-    }
-    
-    public int getID(){
-        return this.idNumber;
-    }
-    
-    public String toString(){
-        return "The student's name is: " + this.name;
+    //-----------------------------------------------
+    //printName: print the student's name
+    //-----------------------------------------------
+    //add header for printName
+    public void printName()
+    {
+        //add body of printName
+        System.out.println(this.name);
     }
 }

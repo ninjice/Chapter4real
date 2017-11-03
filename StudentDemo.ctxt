@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=StudentDemo
+comment1.params=num\ nm
+comment1.target=StudentDemo(int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Student\r\n
+comment2.params=
+comment2.target=int\ combineIDNumbers()
+comment3.params=other
+comment3.target=StudentDemo\ newStudent(StudentDemo)
+comment4.params=
+comment4.target=int\ getID()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6
