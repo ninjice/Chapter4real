@@ -31,7 +31,7 @@ public class Student
     {
         //add body of inputGrades
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter " + studentName + "'s score for " + testNumber);
+        System.out.println("\nEnter " + studentName + "'s score for test " + testNumber);
         
         if(testNumber == 1){
             this.test1Score = scan.nextInt();
@@ -42,6 +42,19 @@ public class Student
         }
     }
     
+    public int getGrade(int testNumber){
+        int output = 0;
+        
+        if(testNumber == 1){
+            output = this.test1Score;
+        }
+        
+        if(testNumber == 2){
+            output = this.test2Score;
+        }
+        
+        return output;
+    }
     //-----------------------------------------------
     //getAverage: compute and return the student's test average
     //-----------------------------------------------
@@ -49,7 +62,8 @@ public class Student
     public int getAverage(int score1, int score2)
     {
         //add body of getAverage
-        return((score1 +score2)/2);
+        int average = ((score1 +score2)/2);
+        return(average);
     }
     
     //-----------------------------------------------
@@ -69,5 +83,9 @@ public class Student
     {
         //add body of printName
         System.out.println(this.name);
+    }
+    
+    public String toString(){
+        return("Name: "+this.name +"\tTest1: "+this.test1Score + "\tTest2: "+this.test2Score);
     }
 }
